@@ -1,10 +1,13 @@
 <script lang="ts">
+	import { auth } from '$lib/utils/firebase'
+
+	const user = auth.currentUser
 </script>
 
 <main>
 	<h1>Welcome to SvelteKit</h1>
 	<p>
-		Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
+		{user?.displayName}
 	</p>
 </main>
 

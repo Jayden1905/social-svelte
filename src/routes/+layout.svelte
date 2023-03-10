@@ -10,7 +10,7 @@
 
 <div>
 	{#if $authState?.loading}
-		<p>loading</p>
+		<div>loading...</div>
 	{:else}
 		<slot />
 	{/if}

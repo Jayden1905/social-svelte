@@ -1,8 +1,8 @@
+import { auth } from '$lib/utils/firebase'
 import { redirect } from '@sveltejs/kit'
-import { authState } from '../../../store'
 
 export const ssr = true
 
 export function load() {
-	if (authState.subscribe((value) => !value?.user)) throw redirect(307, '/')
+	if (auth.currentUser) throw redirect(307, '/')
 }
